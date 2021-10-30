@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --main-color:#443;
+    --border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
+    --border-radius-hover:4% 95% 6% 95%/95% 4% 92% 5%;
+    --border:.2rem solid var(--main-color);
+    --border-hover:.2rem dashed var(--main-color);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F5F5F5;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.btn {
+    display: inline-block;
+    border: var(--border);
+    padding: .9rem 1.8rem;
+    color: var(--main-color);
+    background-color: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    border: var(--border-hover);
+    border-radius: var(--border-radius-hover);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0; left:0; right:0;
+    z-index: 1000;
+
+    padding: 2rem 9%;
+    background-color: #FFF;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.377);
+}
+
+header .logo {
+    color: var(--main-color);
+    font-size: 2.5rem;
+}
+
+header .logo i {
+    padding-left: .5rem;
+}
+
+header .navbar a{
+    display: inline-block;
+    margin: 0 1.3rem;
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
+header .btn {
+    margin-top: 0;
+}
+
+#menu {
+    font-size: 3rem;
+    color: var(--main-color);
+    cursor: pointer;
+    display: none;
+}
+
+.home {
+    min-height: 100vh;
+    padding-top: 12rem;
+    background-image: url(../image/home-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.home .row .content {
+    flex: 1 1 42rem;
+}
+
+.home .row .content h3 {
+    font-size: 6.5rem;
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0rem);
+    }
+    50% {
+        transform: translateY(-7rem);
+    }
+}
+
+.home .row .image {
+    flex: 1 1 42rem;
+    padding-top: 10rem;
+    text-align: center;
+}
+
+.home .row .image img {
+    height: 35rem;
+    animation:  float 5s linear infinite;
+}
+
+.home .image-slider {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.home .image-slider img {
+    height: 9rem;
+    margin: 0 .5rem;
+    cursor: pointer;
+    margin-top: 5rem;
+}
+
+.home .image-slider img:hover {
+    transform: translateY( -2rem);
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    header {
+        padding: 2rem;
+    }
+    section {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #menu {
+        display: initial;
+    }
+    #menu.fa-times {
+        transform: rotate(-180deg);
+    }
+    header .navbar{
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        background-color: #FFF;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    header .navbar a {
+        display: block;
+        padding: 1.5rem 2rem;
+        font-size: 2.3rem;
+        margin:0;
+    }
+    header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
+    } 
+    .home {
+        text-align: center;
+    }
+    .home .row .content h3 {
+        font-size: 4.5rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+    .home .row .image img {
+        height: auto;
+        width: 100%;
+    }
+
+}
