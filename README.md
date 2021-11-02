@@ -2,7 +2,7 @@
 
 <hr>
 
-<p>Website completly responsive to all screen sizies</p>
+<p>Website completly responsive to all screen sizes</p>
 <hr>
 
 <h2>Desktop Version will appear here</h2>
